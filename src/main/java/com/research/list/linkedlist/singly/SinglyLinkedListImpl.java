@@ -199,4 +199,51 @@ public class SinglyLinkedListImpl<T> {
 		
 		fast.setNextRef(null);
 	}
+	
+	public int lengthOfLinkedList(){
+		int length = 0;
+		Node<T> tmp = head;
+		while(true){
+			if(tmp == null)
+				break;
+			tmp=tmp.getNextRef();
+			length++;
+		}
+		System.out.println("");
+		
+		return length;
+	}
+	
+	public Node<T> findMidNodeBruteMethod(){
+		Node<T> midNode = null;
+		int length = lengthOfLinkedList();
+		int midPoint = length/2;
+		int counter = 0;
+		Node<T> tmp = head;
+		while(tmp != null){
+			if(counter == midPoint){
+				midNode = tmp;
+			}
+			tmp=tmp.getNextRef();
+			counter++;
+			
+		}
+		return midNode;
+	}
+	
+	public Node<T> findMidNode(){
+		Node<T> midNode = head;
+		int counter = 0;
+		Node<T> tmp = head;
+		while(tmp != null){
+			counter++;
+			if(counter%2 == 0){
+				midNode = midNode.getNextRef();
+			}
+			tmp=tmp.getNextRef();
+		}
+		
+		return midNode;
+	}
+	
 }

@@ -27,16 +27,27 @@ public class SinglyLinkedListTest {
 	@Test
 	public void testSinglyLinkedList(){
 		//SinglyLinkedListImpl<Integer> linkedList = new SinglyLinkedListImpl<Integer>();
-		
+		System.out.println("Length "+linkedList.lengthOfLinkedList());
 		linkedList.traverse();
 		linkedList.addAfter(21, 90);
+		System.out.println("Length "+linkedList.lengthOfLinkedList());
 		linkedList.traverse();
 		linkedList.addAfter(67, 42);
+		System.out.println("Length "+linkedList.lengthOfLinkedList());
 		linkedList.traverse();
 		linkedList.deleteAfter(49);
+		System.out.println("Length "+linkedList.lengthOfLinkedList());
 		linkedList.traverse();
+		System.out.println("Mid Node Brute Method "+linkedList.findMidNodeBruteMethod().getValue());
+		System.out.println("Mid Node "+linkedList.findMidNode().getValue());
+
+		
 		linkedList.deleteFront();
+		System.out.println("Length "+linkedList.lengthOfLinkedList());
 		linkedList.traverse();
+		System.out.println("Mid Node Brute Method "+linkedList.findMidNodeBruteMethod().getValue());
+		System.out.println("Mid Node "+linkedList.findMidNode().getValue());
+		
 		linkedList.reverse();
 		linkedList.traverse();
 		

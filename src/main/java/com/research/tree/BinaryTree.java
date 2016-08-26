@@ -117,11 +117,38 @@ public class BinaryTree {
 	
 	//Reverse Level with recursion
 	public void testOrder(TreeNode node){
-		int depth = depthOfTree(node);
+		if(node == null) return ;
+		Stack<TreeNode> stack = new Stack<TreeNode>();
+		stack.add(node);
 		
-		for(int i=depth;i>0;i--){
-			printTree(node,i);
+		boolean directionFlag = true;
+		while (!stack.isEmpty()) {
+			Stack<TreeNode> tempStack = new Stack<TreeNode>();
+			
+			while (!stack.isEmpty()) {
+				TreeNode tmp = stack.pop();
+				System.out.print(tmp.data+",");
+				
+				if(!directionFlag){
+					if(tmp.left!=null){
+						tempStack.add(tmp.left);
+					} if(tmp.right!=null){
+						tempStack.add(tmp.right);
+					}
+				} else {
+					if(tmp.right!=null){
+						tempStack.add(tmp.right);
+					}
+					if(tmp.left!=null){
+						tempStack.add(tmp.left);
+					} 
+				}
+			}
+			
+			directionFlag = !directionFlag;
+			stack = tempStack;
 		}
+		
 	}
 	
 	public void printTree(TreeNode node, int level){
