@@ -31,6 +31,11 @@ public class BinaryTest {
 	}
 	
 	@Test
+	public void testPrintTree(){
+		BinaryTree tree = new BinaryTree();
+		tree.printTree(rootNode, 4);
+	}
+	@Test
 	public void testPreOrder(){
 		BinaryTree bTree = new BinaryTree();
 		bTree.preOrder(rootNode);
