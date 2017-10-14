@@ -10,8 +10,8 @@ public class MostOccuredElement {
 	static Integer[] intList = {5,21,21,3,4,5,5,3,6,7,65,5,21,21,21,4,4,4,4,4,4,4,4,4,4};
 	
 	public static void main(String[] args) {
-		//mostOccurentElementByMap();
-		mostOccurentElement();
+		mostOccurentElementByMap();
+		//mostOccurentElement();
 	}
 	
 	public static void mostOccurentElement(){
